@@ -1,6 +1,13 @@
 ########################################################
 # This is auto generated file.
 ########################################################
+
+import os
+import strformat
+const root = currentSourcePath.parentDir
+const nghttp3LibIncludes    = root/"libs"/"nghttp3"/"lib"/"includes"
+{.passc: fmt"-I{nghttp3LibIncludes}".}
+
 {.compile: "./libs/nghttp3/lib/nghttp3_balloc.c".}
 {.compile: "./libs/nghttp3/lib/nghttp3_buf.c".}
 {.compile: "./libs/nghttp3/lib/nghttp3_conn.c".}
@@ -124,93 +131,93 @@ else:
     hint("Declaration of " & "struct_nghttp3_rcbuf" &
         " already exists, not redeclaring")
 type
-  nghttp3_ssize_536871366 = ptrdiff_t_536871370 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:82:19
+  nghttp3_ssize_536871366 = ptrdiff_t_536871370 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:82:19
   ptrdiff_t_536871369 = clong ## Generated based on /usr/include/clang/18.1.3/include/__stddef_ptrdiff_t.h:18:26
-  nghttp3_malloc_536871371 = proc (a0: csize_t; a1: pointer): pointer {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:443:17
-  nghttp3_free_536871373 = proc (a0: pointer; a1: pointer): void {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:452:16
+  nghttp3_malloc_536871371 = proc (a0: csize_t; a1: pointer): pointer {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:443:17
+  nghttp3_free_536871373 = proc (a0: pointer; a1: pointer): void {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:452:16
   nghttp3_calloc_536871375 = proc (a0: csize_t; a1: csize_t; a2: pointer): pointer {.
-      cdecl.}                ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:461:17
+      cdecl.}                ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:461:17
   nghttp3_realloc_536871377 = proc (a0: pointer; a1: csize_t; a2: pointer): pointer {.
-      cdecl.}                ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:470:17
+      cdecl.}                ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:470:17
   struct_nghttp3_mem_536871379 {.pure, inheritable, bycopy.} = object
-    user_data*: pointer      ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:512:16
+    user_data*: pointer      ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:512:16
     malloc*: nghttp3_malloc_536871372
     free*: nghttp3_free_536871374
     calloc*: nghttp3_calloc_536871376
     realloc*: nghttp3_realloc_536871378
-  nghttp3_mem_536871381 = struct_nghttp3_mem_536871380 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:538:3
+  nghttp3_mem_536871381 = struct_nghttp3_mem_536871380 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:538:3
   struct_nghttp3_vec_536871383 {.pure, inheritable, bycopy.} = object
-    base*: ptr uint8         ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:554:16
+    base*: ptr uint8         ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:554:16
     len*: csize_t
-  nghttp3_vec_536871385 = struct_nghttp3_vec_536871384 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:564:3
-  nghttp3_rcbuf_536871387 = struct_nghttp3_rcbuf ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:573:30
+  nghttp3_vec_536871385 = struct_nghttp3_vec_536871384 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:564:3
+  nghttp3_rcbuf_536871387 = struct_nghttp3_rcbuf ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:573:30
   struct_nghttp3_buf_536871389 {.pure, inheritable, bycopy.} = object
-    begin*: ptr uint8        ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:616:16
+    begin*: ptr uint8        ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:616:16
     end_field*: ptr uint8
     pos*: ptr uint8
     last*: ptr uint8
-  nghttp3_buf_536871391 = struct_nghttp3_buf_536871390 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:638:3
+  nghttp3_buf_536871391 = struct_nghttp3_buf_536871390 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:638:3
   struct_nghttp3_nv_536871393 {.pure, inheritable, bycopy.} = object
-    name*: ptr uint8         ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:740:16
+    name*: ptr uint8         ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:740:16
     value*: ptr uint8
     namelen*: csize_t
     valuelen*: csize_t
     flags*: uint8
-  nghttp3_nv_536871395 = struct_nghttp3_nv_536871394 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:764:3
-  nghttp3_qpack_token_536871399 = enum_nghttp3_qpack_token_536871398 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1060:3
+  nghttp3_nv_536871395 = struct_nghttp3_nv_536871394 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:764:3
+  nghttp3_qpack_token_536871399 = enum_nghttp3_qpack_token_536871398 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1060:3
   struct_nghttp3_qpack_nv_536871401 {.pure, inheritable, bycopy.} = object
-    name*: ptr nghttp3_rcbuf_536871388 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1069:16
+    name*: ptr nghttp3_rcbuf_536871388 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1069:16
     value*: ptr nghttp3_rcbuf_536871388
     token*: int32
     flags*: uint8
-  nghttp3_qpack_nv_536871403 = struct_nghttp3_qpack_nv_536871402 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1091:3
-  nghttp3_qpack_encoder_536871405 = struct_nghttp3_qpack_encoder ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1099:38
-  nghttp3_qpack_stream_context_536871407 = struct_nghttp3_qpack_stream_context ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1239:45
-  nghttp3_qpack_decoder_536871409 = struct_nghttp3_qpack_decoder ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1295:38
+  nghttp3_qpack_nv_536871403 = struct_nghttp3_qpack_nv_536871402 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1091:3
+  nghttp3_qpack_encoder_536871405 = struct_nghttp3_qpack_encoder ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1099:38
+  nghttp3_qpack_stream_context_536871407 = struct_nghttp3_qpack_stream_context ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1239:45
+  nghttp3_qpack_decoder_536871409 = struct_nghttp3_qpack_decoder ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1295:38
   nghttp3_debug_vprintf_callback_536871411 = proc (a0: cstring): void {.cdecl,
-      varargs.}              ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1545:16
-  nghttp3_conn_536871413 = struct_nghttp3_conn ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1605:29
+      varargs.}              ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1545:16
+  nghttp3_conn_536871413 = struct_nghttp3_conn ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1605:29
   struct_nghttp3_settings_536871415 {.pure, inheritable, bycopy.} = object
-    max_field_section_size*: uint64 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1615:16
+    max_field_section_size*: uint64 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1615:16
     qpack_max_dtable_capacity*: csize_t
     qpack_encoder_max_dtable_capacity*: csize_t
     qpack_blocked_streams*: csize_t
     enable_connect_protocol*: uint8
     h3_datagram*: uint8
-  nghttp3_settings_536871417 = struct_nghttp3_settings_536871416 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1655:3
+  nghttp3_settings_536871417 = struct_nghttp3_settings_536871416 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1655:3
   nghttp3_acked_stream_data_536871419 = proc (a0: ptr nghttp3_conn_536871414;
-      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1670:15
+      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1670:15
   nghttp3_stream_close_536871421 = proc (a0: ptr nghttp3_conn_536871414;
-      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1687:15
+      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1687:15
   nghttp3_recv_data_536871423 = proc (a0: ptr nghttp3_conn_536871414; a1: int64;
                                       a2: ptr uint8; a3: csize_t; a4: pointer;
-                                      a5: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1708:15
+                                      a5: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1708:15
   nghttp3_deferred_consume_536871425 = proc (a0: ptr nghttp3_conn_536871414;
-      a1: int64; a2: csize_t; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1727:15
+      a1: int64; a2: csize_t; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1727:15
   nghttp3_begin_headers_536871427 = proc (a0: ptr nghttp3_conn_536871414;
-      a1: int64; a2: pointer; a3: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1746:15
+      a1: int64; a2: pointer; a3: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1746:15
   nghttp3_recv_header_536871429 = proc (a0: ptr nghttp3_conn_536871414;
                                         a1: int64; a2: int32;
                                         a3: ptr nghttp3_rcbuf_536871388;
                                         a4: ptr nghttp3_rcbuf_536871388;
                                         a5: uint8; a6: pointer; a7: pointer): cint {.
-      cdecl.}                ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1770:15
+      cdecl.}                ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1770:15
   nghttp3_end_headers_536871431 = proc (a0: ptr nghttp3_conn_536871414;
                                         a1: int64; a2: cint; a3: pointer;
-                                        a4: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1790:15
+                                        a4: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1790:15
   nghttp3_end_stream_536871433 = proc (a0: ptr nghttp3_conn_536871414;
                                        a1: int64; a2: pointer; a3: pointer): cint {.
-      cdecl.}                ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1808:15
+      cdecl.}                ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1808:15
   nghttp3_stop_sending_536871435 = proc (a0: ptr nghttp3_conn_536871414;
-      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1824:15
+      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1824:15
   nghttp3_reset_stream_536871437 = proc (a0: ptr nghttp3_conn_536871414;
-      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1842:15
+      a1: int64; a2: uint64; a3: pointer; a4: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1842:15
   nghttp3_shutdown_536871439 = proc (a0: ptr nghttp3_conn_536871414; a1: int64;
-                                     a2: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1875:15
+                                     a2: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1875:15
   nghttp3_recv_settings_536871441 = proc (a0: ptr nghttp3_conn_536871414;
-      a1: ptr nghttp3_settings_536871418; a2: pointer): cint {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1890:15
+      a1: ptr nghttp3_settings_536871418; a2: pointer): cint {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1890:15
   struct_nghttp3_callbacks_536871443 {.pure, inheritable, bycopy.} = object
-    acked_stream_data*: nghttp3_acked_stream_data_536871420 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1902:16
+    acked_stream_data*: nghttp3_acked_stream_data_536871420 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1902:16
     stream_close*: nghttp3_stream_close_536871422
     recv_data*: nghttp3_recv_data_536871424
     deferred_consume*: nghttp3_deferred_consume_536871426
@@ -225,22 +232,22 @@ type
     reset_stream*: nghttp3_reset_stream_536871438
     shutdown*: nghttp3_shutdown_536871440
     recv_settings*: nghttp3_recv_settings_536871442
-  nghttp3_callbacks_536871452 = struct_nghttp3_callbacks_536871444 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1989:3
+  nghttp3_callbacks_536871452 = struct_nghttp3_callbacks_536871444 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1989:3
   nghttp3_read_data_callback_536871454 = proc (a0: ptr nghttp3_conn_536871414;
       a1: int64; a2: ptr nghttp3_vec_536871386; a3: csize_t; a4: ptr uint32;
-      a5: pointer; a6: pointer): nghttp3_ssize_536871368 {.cdecl.} ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2451:25
+      a5: pointer; a6: pointer): nghttp3_ssize_536871368 {.cdecl.} ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2451:25
   struct_nghttp3_data_reader_536871456 {.pure, inheritable, bycopy.} = object
-    read_data*: nghttp3_read_data_callback_536871455 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2461:16
-  nghttp3_data_reader_536871458 = struct_nghttp3_data_reader_536871457 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2466:3
+    read_data*: nghttp3_read_data_callback_536871455 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2461:16
+  nghttp3_data_reader_536871458 = struct_nghttp3_data_reader_536871457 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2466:3
   struct_nghttp3_pri_536871460 {.pure, inheritable, bycopy.} = object
-    urgency* {.align(8'i64).}: uint32 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2662:33
+    urgency* {.align(8'i64).}: uint32 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2662:33
     inc* {.align(8'i64).}: uint8
-  nghttp3_pri_536871462 = struct_nghttp3_pri_536871461 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2676:3
+  nghttp3_pri_536871462 = struct_nghttp3_pri_536871461 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2676:3
   struct_nghttp3_info_536871464 {.pure, inheritable, bycopy.} = object
-    age*: cint               ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2834:16
+    age*: cint               ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2834:16
     version_num*: cint
     version_str*: cstring
-  nghttp3_info_536871466 = struct_nghttp3_info_536871465 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2852:3
+  nghttp3_info_536871466 = struct_nghttp3_info_536871465 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2852:3
   nghttp3_qpack_encoder_536871406 = (when declared(nghttp3_qpack_encoder):
     when ownSizeof(nghttp3_qpack_encoder) != ownSizeof(nghttp3_qpack_encoder_536871405):
       static :
@@ -952,21 +959,31 @@ else:
     hint("Declaration of " & "nghttp3_stream_close" &
         " already exists, not redeclaring")
 when not declared(NGHTTP3_VERSION):
-  when "@PACKAGE_VERSION@" is static:
+  when "1.10.0-DEV" is static:
     const
-      NGHTTP3_VERSION* = "@PACKAGE_VERSION@" ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/version.h:34:9
+      NGHTTP3_VERSION* = "1.10.0-DEV" ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/version.h:34:9
   else:
-    let NGHTTP3_VERSION* = "@PACKAGE_VERSION@" ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/version.h:34:9
+    let NGHTTP3_VERSION* = "1.10.0-DEV" ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/version.h:34:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_VERSION" &
         " already exists, not redeclaring")
+when not declared(NGHTTP3_VERSION_NUM):
+  when 68096 is static:
+    const
+      NGHTTP3_VERSION_NUM* = 68096 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/version.h:44:9
+  else:
+    let NGHTTP3_VERSION_NUM* = 68096 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/version.h:44:9
+else:
+  static :
+    hint("Declaration of " & "NGHTTP3_VERSION_NUM" &
+        " already exists, not redeclaring")
 when not declared(NGHTTP3_ALPN_H3):
   when "\\x2h3" is static:
     const
-      NGHTTP3_ALPN_H3* = "\\x2h3" ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:91:9
+      NGHTTP3_ALPN_H3* = "\\x2h3" ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:91:9
   else:
-    let NGHTTP3_ALPN_H3* = "\\x2h3" ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:91:9
+    let NGHTTP3_ALPN_H3* = "\\x2h3" ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:91:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ALPN_H3" &
@@ -974,9 +991,9 @@ else:
 when not declared(NGHTTP3_ERR_INVALID_ARGUMENT):
   when -101 is static:
     const
-      NGHTTP3_ERR_INVALID_ARGUMENT* = -101 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:105:9
+      NGHTTP3_ERR_INVALID_ARGUMENT* = -101 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:105:9
   else:
-    let NGHTTP3_ERR_INVALID_ARGUMENT* = -101 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:105:9
+    let NGHTTP3_ERR_INVALID_ARGUMENT* = -101 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:105:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_INVALID_ARGUMENT" &
@@ -984,9 +1001,9 @@ else:
 when not declared(NGHTTP3_ERR_INVALID_STATE):
   when -102 is static:
     const
-      NGHTTP3_ERR_INVALID_STATE* = -102 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:112:9
+      NGHTTP3_ERR_INVALID_STATE* = -102 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:112:9
   else:
-    let NGHTTP3_ERR_INVALID_STATE* = -102 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:112:9
+    let NGHTTP3_ERR_INVALID_STATE* = -102 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:112:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_INVALID_STATE" &
@@ -994,9 +1011,9 @@ else:
 when not declared(NGHTTP3_ERR_WOULDBLOCK):
   when -103 is static:
     const
-      NGHTTP3_ERR_WOULDBLOCK* = -103 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:119:9
+      NGHTTP3_ERR_WOULDBLOCK* = -103 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:119:9
   else:
-    let NGHTTP3_ERR_WOULDBLOCK* = -103 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:119:9
+    let NGHTTP3_ERR_WOULDBLOCK* = -103 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:119:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_WOULDBLOCK" &
@@ -1004,9 +1021,9 @@ else:
 when not declared(NGHTTP3_ERR_STREAM_IN_USE):
   when -104 is static:
     const
-      NGHTTP3_ERR_STREAM_IN_USE* = -104 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:126:9
+      NGHTTP3_ERR_STREAM_IN_USE* = -104 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:126:9
   else:
-    let NGHTTP3_ERR_STREAM_IN_USE* = -104 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:126:9
+    let NGHTTP3_ERR_STREAM_IN_USE* = -104 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:126:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_STREAM_IN_USE" &
@@ -1014,9 +1031,9 @@ else:
 when not declared(NGHTTP3_ERR_MALFORMED_HTTP_HEADER):
   when -105 is static:
     const
-      NGHTTP3_ERR_MALFORMED_HTTP_HEADER* = -105 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:133:9
+      NGHTTP3_ERR_MALFORMED_HTTP_HEADER* = -105 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:133:9
   else:
-    let NGHTTP3_ERR_MALFORMED_HTTP_HEADER* = -105 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:133:9
+    let NGHTTP3_ERR_MALFORMED_HTTP_HEADER* = -105 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:133:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_MALFORMED_HTTP_HEADER" &
@@ -1024,9 +1041,9 @@ else:
 when not declared(NGHTTP3_ERR_REMOVE_HTTP_HEADER):
   when -106 is static:
     const
-      NGHTTP3_ERR_REMOVE_HTTP_HEADER* = -106 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:140:9
+      NGHTTP3_ERR_REMOVE_HTTP_HEADER* = -106 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:140:9
   else:
-    let NGHTTP3_ERR_REMOVE_HTTP_HEADER* = -106 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:140:9
+    let NGHTTP3_ERR_REMOVE_HTTP_HEADER* = -106 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:140:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_REMOVE_HTTP_HEADER" &
@@ -1034,9 +1051,9 @@ else:
 when not declared(NGHTTP3_ERR_MALFORMED_HTTP_MESSAGING):
   when -107 is static:
     const
-      NGHTTP3_ERR_MALFORMED_HTTP_MESSAGING* = -107 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:147:9
+      NGHTTP3_ERR_MALFORMED_HTTP_MESSAGING* = -107 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:147:9
   else:
-    let NGHTTP3_ERR_MALFORMED_HTTP_MESSAGING* = -107 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:147:9
+    let NGHTTP3_ERR_MALFORMED_HTTP_MESSAGING* = -107 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:147:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_MALFORMED_HTTP_MESSAGING" &
@@ -1044,9 +1061,9 @@ else:
 when not declared(NGHTTP3_ERR_QPACK_FATAL):
   when -108 is static:
     const
-      NGHTTP3_ERR_QPACK_FATAL* = -108 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:154:9
+      NGHTTP3_ERR_QPACK_FATAL* = -108 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:154:9
   else:
-    let NGHTTP3_ERR_QPACK_FATAL* = -108 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:154:9
+    let NGHTTP3_ERR_QPACK_FATAL* = -108 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:154:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_QPACK_FATAL" &
@@ -1054,9 +1071,9 @@ else:
 when not declared(NGHTTP3_ERR_QPACK_HEADER_TOO_LARGE):
   when -109 is static:
     const
-      NGHTTP3_ERR_QPACK_HEADER_TOO_LARGE* = -109 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:161:9
+      NGHTTP3_ERR_QPACK_HEADER_TOO_LARGE* = -109 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:161:9
   else:
-    let NGHTTP3_ERR_QPACK_HEADER_TOO_LARGE* = -109 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:161:9
+    let NGHTTP3_ERR_QPACK_HEADER_TOO_LARGE* = -109 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:161:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_QPACK_HEADER_TOO_LARGE" &
@@ -1064,9 +1081,9 @@ else:
 when not declared(NGHTTP3_ERR_STREAM_NOT_FOUND):
   when -110 is static:
     const
-      NGHTTP3_ERR_STREAM_NOT_FOUND* = -110 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:168:9
+      NGHTTP3_ERR_STREAM_NOT_FOUND* = -110 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:168:9
   else:
-    let NGHTTP3_ERR_STREAM_NOT_FOUND* = -110 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:168:9
+    let NGHTTP3_ERR_STREAM_NOT_FOUND* = -110 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:168:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_STREAM_NOT_FOUND" &
@@ -1074,9 +1091,9 @@ else:
 when not declared(NGHTTP3_ERR_CONN_CLOSING):
   when -111 is static:
     const
-      NGHTTP3_ERR_CONN_CLOSING* = -111 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:175:9
+      NGHTTP3_ERR_CONN_CLOSING* = -111 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:175:9
   else:
-    let NGHTTP3_ERR_CONN_CLOSING* = -111 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:175:9
+    let NGHTTP3_ERR_CONN_CLOSING* = -111 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:175:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_CONN_CLOSING" &
@@ -1084,9 +1101,9 @@ else:
 when not declared(NGHTTP3_ERR_STREAM_DATA_OVERFLOW):
   when -112 is static:
     const
-      NGHTTP3_ERR_STREAM_DATA_OVERFLOW* = -112 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:182:9
+      NGHTTP3_ERR_STREAM_DATA_OVERFLOW* = -112 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:182:9
   else:
-    let NGHTTP3_ERR_STREAM_DATA_OVERFLOW* = -112 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:182:9
+    let NGHTTP3_ERR_STREAM_DATA_OVERFLOW* = -112 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:182:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_STREAM_DATA_OVERFLOW" &
@@ -1094,9 +1111,9 @@ else:
 when not declared(NGHTTP3_ERR_QPACK_DECOMPRESSION_FAILED):
   when -401 is static:
     const
-      NGHTTP3_ERR_QPACK_DECOMPRESSION_FAILED* = -401 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:189:9
+      NGHTTP3_ERR_QPACK_DECOMPRESSION_FAILED* = -401 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:189:9
   else:
-    let NGHTTP3_ERR_QPACK_DECOMPRESSION_FAILED* = -401 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:189:9
+    let NGHTTP3_ERR_QPACK_DECOMPRESSION_FAILED* = -401 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:189:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_QPACK_DECOMPRESSION_FAILED" &
@@ -1104,9 +1121,9 @@ else:
 when not declared(NGHTTP3_ERR_QPACK_ENCODER_STREAM_ERROR):
   when -402 is static:
     const
-      NGHTTP3_ERR_QPACK_ENCODER_STREAM_ERROR* = -402 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:196:9
+      NGHTTP3_ERR_QPACK_ENCODER_STREAM_ERROR* = -402 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:196:9
   else:
-    let NGHTTP3_ERR_QPACK_ENCODER_STREAM_ERROR* = -402 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:196:9
+    let NGHTTP3_ERR_QPACK_ENCODER_STREAM_ERROR* = -402 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:196:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_QPACK_ENCODER_STREAM_ERROR" &
@@ -1114,9 +1131,9 @@ else:
 when not declared(NGHTTP3_ERR_QPACK_DECODER_STREAM_ERROR):
   when -403 is static:
     const
-      NGHTTP3_ERR_QPACK_DECODER_STREAM_ERROR* = -403 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:203:9
+      NGHTTP3_ERR_QPACK_DECODER_STREAM_ERROR* = -403 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:203:9
   else:
-    let NGHTTP3_ERR_QPACK_DECODER_STREAM_ERROR* = -403 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:203:9
+    let NGHTTP3_ERR_QPACK_DECODER_STREAM_ERROR* = -403 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:203:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_QPACK_DECODER_STREAM_ERROR" &
@@ -1124,9 +1141,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_FRAME_UNEXPECTED):
   when -601 is static:
     const
-      NGHTTP3_ERR_H3_FRAME_UNEXPECTED* = -601 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:210:9
+      NGHTTP3_ERR_H3_FRAME_UNEXPECTED* = -601 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:210:9
   else:
-    let NGHTTP3_ERR_H3_FRAME_UNEXPECTED* = -601 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:210:9
+    let NGHTTP3_ERR_H3_FRAME_UNEXPECTED* = -601 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:210:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_FRAME_UNEXPECTED" &
@@ -1134,9 +1151,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_FRAME_ERROR):
   when -602 is static:
     const
-      NGHTTP3_ERR_H3_FRAME_ERROR* = -602 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:217:9
+      NGHTTP3_ERR_H3_FRAME_ERROR* = -602 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:217:9
   else:
-    let NGHTTP3_ERR_H3_FRAME_ERROR* = -602 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:217:9
+    let NGHTTP3_ERR_H3_FRAME_ERROR* = -602 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:217:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_FRAME_ERROR" &
@@ -1144,9 +1161,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_MISSING_SETTINGS):
   when -603 is static:
     const
-      NGHTTP3_ERR_H3_MISSING_SETTINGS* = -603 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:224:9
+      NGHTTP3_ERR_H3_MISSING_SETTINGS* = -603 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:224:9
   else:
-    let NGHTTP3_ERR_H3_MISSING_SETTINGS* = -603 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:224:9
+    let NGHTTP3_ERR_H3_MISSING_SETTINGS* = -603 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:224:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_MISSING_SETTINGS" &
@@ -1154,9 +1171,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_INTERNAL_ERROR):
   when -604 is static:
     const
-      NGHTTP3_ERR_H3_INTERNAL_ERROR* = -604 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:230:9
+      NGHTTP3_ERR_H3_INTERNAL_ERROR* = -604 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:230:9
   else:
-    let NGHTTP3_ERR_H3_INTERNAL_ERROR* = -604 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:230:9
+    let NGHTTP3_ERR_H3_INTERNAL_ERROR* = -604 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:230:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_INTERNAL_ERROR" &
@@ -1164,9 +1181,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_CLOSED_CRITICAL_STREAM):
   when -605 is static:
     const
-      NGHTTP3_ERR_H3_CLOSED_CRITICAL_STREAM* = -605 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:237:9
+      NGHTTP3_ERR_H3_CLOSED_CRITICAL_STREAM* = -605 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:237:9
   else:
-    let NGHTTP3_ERR_H3_CLOSED_CRITICAL_STREAM* = -605 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:237:9
+    let NGHTTP3_ERR_H3_CLOSED_CRITICAL_STREAM* = -605 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:237:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_CLOSED_CRITICAL_STREAM" &
@@ -1174,9 +1191,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_GENERAL_PROTOCOL_ERROR):
   when -606 is static:
     const
-      NGHTTP3_ERR_H3_GENERAL_PROTOCOL_ERROR* = -606 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:244:9
+      NGHTTP3_ERR_H3_GENERAL_PROTOCOL_ERROR* = -606 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:244:9
   else:
-    let NGHTTP3_ERR_H3_GENERAL_PROTOCOL_ERROR* = -606 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:244:9
+    let NGHTTP3_ERR_H3_GENERAL_PROTOCOL_ERROR* = -606 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:244:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_GENERAL_PROTOCOL_ERROR" &
@@ -1184,9 +1201,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_ID_ERROR):
   when -607 is static:
     const
-      NGHTTP3_ERR_H3_ID_ERROR* = -607 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:251:9
+      NGHTTP3_ERR_H3_ID_ERROR* = -607 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:251:9
   else:
-    let NGHTTP3_ERR_H3_ID_ERROR* = -607 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:251:9
+    let NGHTTP3_ERR_H3_ID_ERROR* = -607 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:251:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_ID_ERROR" &
@@ -1194,9 +1211,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_SETTINGS_ERROR):
   when -608 is static:
     const
-      NGHTTP3_ERR_H3_SETTINGS_ERROR* = -608 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:258:9
+      NGHTTP3_ERR_H3_SETTINGS_ERROR* = -608 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:258:9
   else:
-    let NGHTTP3_ERR_H3_SETTINGS_ERROR* = -608 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:258:9
+    let NGHTTP3_ERR_H3_SETTINGS_ERROR* = -608 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:258:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_SETTINGS_ERROR" &
@@ -1204,9 +1221,9 @@ else:
 when not declared(NGHTTP3_ERR_H3_STREAM_CREATION_ERROR):
   when -609 is static:
     const
-      NGHTTP3_ERR_H3_STREAM_CREATION_ERROR* = -609 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:266:9
+      NGHTTP3_ERR_H3_STREAM_CREATION_ERROR* = -609 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:266:9
   else:
-    let NGHTTP3_ERR_H3_STREAM_CREATION_ERROR* = -609 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:266:9
+    let NGHTTP3_ERR_H3_STREAM_CREATION_ERROR* = -609 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:266:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_H3_STREAM_CREATION_ERROR" &
@@ -1214,9 +1231,9 @@ else:
 when not declared(NGHTTP3_ERR_FATAL):
   when -900 is static:
     const
-      NGHTTP3_ERR_FATAL* = -900 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:274:9
+      NGHTTP3_ERR_FATAL* = -900 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:274:9
   else:
-    let NGHTTP3_ERR_FATAL* = -900 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:274:9
+    let NGHTTP3_ERR_FATAL* = -900 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:274:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_FATAL" &
@@ -1224,9 +1241,9 @@ else:
 when not declared(NGHTTP3_ERR_NOMEM):
   when -901 is static:
     const
-      NGHTTP3_ERR_NOMEM* = -901 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:280:9
+      NGHTTP3_ERR_NOMEM* = -901 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:280:9
   else:
-    let NGHTTP3_ERR_NOMEM* = -901 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:280:9
+    let NGHTTP3_ERR_NOMEM* = -901 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:280:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_NOMEM" &
@@ -1234,9 +1251,9 @@ else:
 when not declared(NGHTTP3_ERR_CALLBACK_FAILURE):
   when -902 is static:
     const
-      NGHTTP3_ERR_CALLBACK_FAILURE* = -902 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:287:9
+      NGHTTP3_ERR_CALLBACK_FAILURE* = -902 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:287:9
   else:
-    let NGHTTP3_ERR_CALLBACK_FAILURE* = -902 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:287:9
+    let NGHTTP3_ERR_CALLBACK_FAILURE* = -902 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:287:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_ERR_CALLBACK_FAILURE" &
@@ -1244,9 +1261,9 @@ else:
 when not declared(NGHTTP3_H3_NO_ERROR):
   when 256 is static:
     const
-      NGHTTP3_H3_NO_ERROR* = 256 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:301:9
+      NGHTTP3_H3_NO_ERROR* = 256 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:301:9
   else:
-    let NGHTTP3_H3_NO_ERROR* = 256 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:301:9
+    let NGHTTP3_H3_NO_ERROR* = 256 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:301:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_NO_ERROR" &
@@ -1254,9 +1271,9 @@ else:
 when not declared(NGHTTP3_H3_GENERAL_PROTOCOL_ERROR):
   when 257 is static:
     const
-      NGHTTP3_H3_GENERAL_PROTOCOL_ERROR* = 257 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:308:9
+      NGHTTP3_H3_GENERAL_PROTOCOL_ERROR* = 257 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:308:9
   else:
-    let NGHTTP3_H3_GENERAL_PROTOCOL_ERROR* = 257 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:308:9
+    let NGHTTP3_H3_GENERAL_PROTOCOL_ERROR* = 257 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:308:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_GENERAL_PROTOCOL_ERROR" &
@@ -1264,9 +1281,9 @@ else:
 when not declared(NGHTTP3_H3_INTERNAL_ERROR):
   when 258 is static:
     const
-      NGHTTP3_H3_INTERNAL_ERROR* = 258 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:315:9
+      NGHTTP3_H3_INTERNAL_ERROR* = 258 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:315:9
   else:
-    let NGHTTP3_H3_INTERNAL_ERROR* = 258 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:315:9
+    let NGHTTP3_H3_INTERNAL_ERROR* = 258 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:315:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_INTERNAL_ERROR" &
@@ -1274,9 +1291,9 @@ else:
 when not declared(NGHTTP3_H3_STREAM_CREATION_ERROR):
   when 259 is static:
     const
-      NGHTTP3_H3_STREAM_CREATION_ERROR* = 259 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:322:9
+      NGHTTP3_H3_STREAM_CREATION_ERROR* = 259 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:322:9
   else:
-    let NGHTTP3_H3_STREAM_CREATION_ERROR* = 259 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:322:9
+    let NGHTTP3_H3_STREAM_CREATION_ERROR* = 259 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:322:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_STREAM_CREATION_ERROR" &
@@ -1284,9 +1301,9 @@ else:
 when not declared(NGHTTP3_H3_CLOSED_CRITICAL_STREAM):
   when 260 is static:
     const
-      NGHTTP3_H3_CLOSED_CRITICAL_STREAM* = 260 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:329:9
+      NGHTTP3_H3_CLOSED_CRITICAL_STREAM* = 260 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:329:9
   else:
-    let NGHTTP3_H3_CLOSED_CRITICAL_STREAM* = 260 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:329:9
+    let NGHTTP3_H3_CLOSED_CRITICAL_STREAM* = 260 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:329:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_CLOSED_CRITICAL_STREAM" &
@@ -1294,9 +1311,9 @@ else:
 when not declared(NGHTTP3_H3_FRAME_UNEXPECTED):
   when 261 is static:
     const
-      NGHTTP3_H3_FRAME_UNEXPECTED* = 261 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:336:9
+      NGHTTP3_H3_FRAME_UNEXPECTED* = 261 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:336:9
   else:
-    let NGHTTP3_H3_FRAME_UNEXPECTED* = 261 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:336:9
+    let NGHTTP3_H3_FRAME_UNEXPECTED* = 261 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:336:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_FRAME_UNEXPECTED" &
@@ -1304,9 +1321,9 @@ else:
 when not declared(NGHTTP3_H3_FRAME_ERROR):
   when 262 is static:
     const
-      NGHTTP3_H3_FRAME_ERROR* = 262 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:343:9
+      NGHTTP3_H3_FRAME_ERROR* = 262 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:343:9
   else:
-    let NGHTTP3_H3_FRAME_ERROR* = 262 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:343:9
+    let NGHTTP3_H3_FRAME_ERROR* = 262 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:343:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_FRAME_ERROR" &
@@ -1314,9 +1331,9 @@ else:
 when not declared(NGHTTP3_H3_EXCESSIVE_LOAD):
   when 263 is static:
     const
-      NGHTTP3_H3_EXCESSIVE_LOAD* = 263 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:350:9
+      NGHTTP3_H3_EXCESSIVE_LOAD* = 263 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:350:9
   else:
-    let NGHTTP3_H3_EXCESSIVE_LOAD* = 263 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:350:9
+    let NGHTTP3_H3_EXCESSIVE_LOAD* = 263 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:350:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_EXCESSIVE_LOAD" &
@@ -1324,9 +1341,9 @@ else:
 when not declared(NGHTTP3_H3_ID_ERROR):
   when 264 is static:
     const
-      NGHTTP3_H3_ID_ERROR* = 264 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:357:9
+      NGHTTP3_H3_ID_ERROR* = 264 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:357:9
   else:
-    let NGHTTP3_H3_ID_ERROR* = 264 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:357:9
+    let NGHTTP3_H3_ID_ERROR* = 264 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:357:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_ID_ERROR" &
@@ -1334,9 +1351,9 @@ else:
 when not declared(NGHTTP3_H3_SETTINGS_ERROR):
   when 265 is static:
     const
-      NGHTTP3_H3_SETTINGS_ERROR* = 265 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:364:9
+      NGHTTP3_H3_SETTINGS_ERROR* = 265 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:364:9
   else:
-    let NGHTTP3_H3_SETTINGS_ERROR* = 265 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:364:9
+    let NGHTTP3_H3_SETTINGS_ERROR* = 265 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:364:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_SETTINGS_ERROR" &
@@ -1344,9 +1361,9 @@ else:
 when not declared(NGHTTP3_H3_MISSING_SETTINGS):
   when 266 is static:
     const
-      NGHTTP3_H3_MISSING_SETTINGS* = 266 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:371:9
+      NGHTTP3_H3_MISSING_SETTINGS* = 266 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:371:9
   else:
-    let NGHTTP3_H3_MISSING_SETTINGS* = 266 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:371:9
+    let NGHTTP3_H3_MISSING_SETTINGS* = 266 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:371:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_MISSING_SETTINGS" &
@@ -1354,9 +1371,9 @@ else:
 when not declared(NGHTTP3_H3_REQUEST_REJECTED):
   when 267 is static:
     const
-      NGHTTP3_H3_REQUEST_REJECTED* = 267 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:378:9
+      NGHTTP3_H3_REQUEST_REJECTED* = 267 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:378:9
   else:
-    let NGHTTP3_H3_REQUEST_REJECTED* = 267 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:378:9
+    let NGHTTP3_H3_REQUEST_REJECTED* = 267 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:378:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_REQUEST_REJECTED" &
@@ -1364,9 +1381,9 @@ else:
 when not declared(NGHTTP3_H3_REQUEST_CANCELLED):
   when 268 is static:
     const
-      NGHTTP3_H3_REQUEST_CANCELLED* = 268 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:385:9
+      NGHTTP3_H3_REQUEST_CANCELLED* = 268 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:385:9
   else:
-    let NGHTTP3_H3_REQUEST_CANCELLED* = 268 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:385:9
+    let NGHTTP3_H3_REQUEST_CANCELLED* = 268 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:385:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_REQUEST_CANCELLED" &
@@ -1374,9 +1391,9 @@ else:
 when not declared(NGHTTP3_H3_REQUEST_INCOMPLETE):
   when 269 is static:
     const
-      NGHTTP3_H3_REQUEST_INCOMPLETE* = 269 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:392:9
+      NGHTTP3_H3_REQUEST_INCOMPLETE* = 269 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:392:9
   else:
-    let NGHTTP3_H3_REQUEST_INCOMPLETE* = 269 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:392:9
+    let NGHTTP3_H3_REQUEST_INCOMPLETE* = 269 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:392:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_REQUEST_INCOMPLETE" &
@@ -1384,9 +1401,9 @@ else:
 when not declared(NGHTTP3_H3_MESSAGE_ERROR):
   when 270 is static:
     const
-      NGHTTP3_H3_MESSAGE_ERROR* = 270 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:399:9
+      NGHTTP3_H3_MESSAGE_ERROR* = 270 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:399:9
   else:
-    let NGHTTP3_H3_MESSAGE_ERROR* = 270 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:399:9
+    let NGHTTP3_H3_MESSAGE_ERROR* = 270 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:399:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_MESSAGE_ERROR" &
@@ -1394,9 +1411,9 @@ else:
 when not declared(NGHTTP3_H3_CONNECT_ERROR):
   when 271 is static:
     const
-      NGHTTP3_H3_CONNECT_ERROR* = 271 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:406:9
+      NGHTTP3_H3_CONNECT_ERROR* = 271 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:406:9
   else:
-    let NGHTTP3_H3_CONNECT_ERROR* = 271 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:406:9
+    let NGHTTP3_H3_CONNECT_ERROR* = 271 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:406:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_CONNECT_ERROR" &
@@ -1404,9 +1421,9 @@ else:
 when not declared(NGHTTP3_H3_VERSION_FALLBACK):
   when 272 is static:
     const
-      NGHTTP3_H3_VERSION_FALLBACK* = 272 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:413:9
+      NGHTTP3_H3_VERSION_FALLBACK* = 272 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:413:9
   else:
-    let NGHTTP3_H3_VERSION_FALLBACK* = 272 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:413:9
+    let NGHTTP3_H3_VERSION_FALLBACK* = 272 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:413:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_H3_VERSION_FALLBACK" &
@@ -1414,9 +1431,9 @@ else:
 when not declared(NGHTTP3_QPACK_DECOMPRESSION_FAILED):
   when 512 is static:
     const
-      NGHTTP3_QPACK_DECOMPRESSION_FAILED* = 512 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:420:9
+      NGHTTP3_QPACK_DECOMPRESSION_FAILED* = 512 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:420:9
   else:
-    let NGHTTP3_QPACK_DECOMPRESSION_FAILED* = 512 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:420:9
+    let NGHTTP3_QPACK_DECOMPRESSION_FAILED* = 512 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:420:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_QPACK_DECOMPRESSION_FAILED" &
@@ -1424,9 +1441,9 @@ else:
 when not declared(NGHTTP3_QPACK_ENCODER_STREAM_ERROR):
   when 513 is static:
     const
-      NGHTTP3_QPACK_ENCODER_STREAM_ERROR* = 513 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:427:9
+      NGHTTP3_QPACK_ENCODER_STREAM_ERROR* = 513 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:427:9
   else:
-    let NGHTTP3_QPACK_ENCODER_STREAM_ERROR* = 513 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:427:9
+    let NGHTTP3_QPACK_ENCODER_STREAM_ERROR* = 513 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:427:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_QPACK_ENCODER_STREAM_ERROR" &
@@ -1434,9 +1451,9 @@ else:
 when not declared(NGHTTP3_QPACK_DECODER_STREAM_ERROR):
   when 514 is static:
     const
-      NGHTTP3_QPACK_DECODER_STREAM_ERROR* = 514 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:434:9
+      NGHTTP3_QPACK_DECODER_STREAM_ERROR* = 514 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:434:9
   else:
-    let NGHTTP3_QPACK_DECODER_STREAM_ERROR* = 514 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:434:9
+    let NGHTTP3_QPACK_DECODER_STREAM_ERROR* = 514 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:434:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_QPACK_DECODER_STREAM_ERROR" &
@@ -1444,9 +1461,9 @@ else:
 when not declared(NGHTTP3_NV_FLAG_NONE):
   when cast[cuint](0'i64) is static:
     const
-      NGHTTP3_NV_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:695:9
+      NGHTTP3_NV_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:695:9
   else:
-    let NGHTTP3_NV_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:695:9
+    let NGHTTP3_NV_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:695:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_NV_FLAG_NONE" &
@@ -1454,9 +1471,9 @@ else:
 when not declared(NGHTTP3_NV_FLAG_NEVER_INDEX):
   when cast[cuint](1'i64) is static:
     const
-      NGHTTP3_NV_FLAG_NEVER_INDEX* = cast[cuint](1'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:704:9
+      NGHTTP3_NV_FLAG_NEVER_INDEX* = cast[cuint](1'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:704:9
   else:
-    let NGHTTP3_NV_FLAG_NEVER_INDEX* = cast[cuint](1'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:704:9
+    let NGHTTP3_NV_FLAG_NEVER_INDEX* = cast[cuint](1'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:704:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_NV_FLAG_NEVER_INDEX" &
@@ -1464,9 +1481,9 @@ else:
 when not declared(NGHTTP3_NV_FLAG_NO_COPY_NAME):
   when cast[cuint](2'i64) is static:
     const
-      NGHTTP3_NV_FLAG_NO_COPY_NAME* = cast[cuint](2'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:713:9
+      NGHTTP3_NV_FLAG_NO_COPY_NAME* = cast[cuint](2'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:713:9
   else:
-    let NGHTTP3_NV_FLAG_NO_COPY_NAME* = cast[cuint](2'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:713:9
+    let NGHTTP3_NV_FLAG_NO_COPY_NAME* = cast[cuint](2'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:713:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_NV_FLAG_NO_COPY_NAME" &
@@ -1474,9 +1491,9 @@ else:
 when not declared(NGHTTP3_NV_FLAG_NO_COPY_VALUE):
   when cast[cuint](4'i64) is static:
     const
-      NGHTTP3_NV_FLAG_NO_COPY_VALUE* = cast[cuint](4'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:722:9
+      NGHTTP3_NV_FLAG_NO_COPY_VALUE* = cast[cuint](4'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:722:9
   else:
-    let NGHTTP3_NV_FLAG_NO_COPY_VALUE* = cast[cuint](4'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:722:9
+    let NGHTTP3_NV_FLAG_NO_COPY_VALUE* = cast[cuint](4'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:722:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_NV_FLAG_NO_COPY_VALUE" &
@@ -1484,9 +1501,9 @@ else:
 when not declared(NGHTTP3_NV_FLAG_TRY_INDEX):
   when cast[cuint](8'i64) is static:
     const
-      NGHTTP3_NV_FLAG_TRY_INDEX* = cast[cuint](8'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:732:9
+      NGHTTP3_NV_FLAG_TRY_INDEX* = cast[cuint](8'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:732:9
   else:
-    let NGHTTP3_NV_FLAG_TRY_INDEX* = cast[cuint](8'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:732:9
+    let NGHTTP3_NV_FLAG_TRY_INDEX* = cast[cuint](8'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:732:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_NV_FLAG_TRY_INDEX" &
@@ -1494,9 +1511,9 @@ else:
 when not declared(NGHTTP3_QPACK_DECODE_FLAG_NONE):
   when cast[cuint](0'i64) is static:
     const
-      NGHTTP3_QPACK_DECODE_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1367:9
+      NGHTTP3_QPACK_DECODE_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1367:9
   else:
-    let NGHTTP3_QPACK_DECODE_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1367:9
+    let NGHTTP3_QPACK_DECODE_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1367:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_QPACK_DECODE_FLAG_NONE" &
@@ -1504,9 +1521,9 @@ else:
 when not declared(NGHTTP3_QPACK_DECODE_FLAG_EMIT):
   when cast[cuint](1'i64) is static:
     const
-      NGHTTP3_QPACK_DECODE_FLAG_EMIT* = cast[cuint](1'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1375:9
+      NGHTTP3_QPACK_DECODE_FLAG_EMIT* = cast[cuint](1'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1375:9
   else:
-    let NGHTTP3_QPACK_DECODE_FLAG_EMIT* = cast[cuint](1'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1375:9
+    let NGHTTP3_QPACK_DECODE_FLAG_EMIT* = cast[cuint](1'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1375:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_QPACK_DECODE_FLAG_EMIT" &
@@ -1514,9 +1531,9 @@ else:
 when not declared(NGHTTP3_QPACK_DECODE_FLAG_FINAL):
   when cast[cuint](2'i64) is static:
     const
-      NGHTTP3_QPACK_DECODE_FLAG_FINAL* = cast[cuint](2'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1383:9
+      NGHTTP3_QPACK_DECODE_FLAG_FINAL* = cast[cuint](2'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1383:9
   else:
-    let NGHTTP3_QPACK_DECODE_FLAG_FINAL* = cast[cuint](2'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1383:9
+    let NGHTTP3_QPACK_DECODE_FLAG_FINAL* = cast[cuint](2'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1383:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_QPACK_DECODE_FLAG_FINAL" &
@@ -1524,9 +1541,9 @@ else:
 when not declared(NGHTTP3_QPACK_DECODE_FLAG_BLOCKED):
   when cast[cuint](4'i64) is static:
     const
-      NGHTTP3_QPACK_DECODE_FLAG_BLOCKED* = cast[cuint](4'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1391:9
+      NGHTTP3_QPACK_DECODE_FLAG_BLOCKED* = cast[cuint](4'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1391:9
   else:
-    let NGHTTP3_QPACK_DECODE_FLAG_BLOCKED* = cast[cuint](4'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1391:9
+    let NGHTTP3_QPACK_DECODE_FLAG_BLOCKED* = cast[cuint](4'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1391:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_QPACK_DECODE_FLAG_BLOCKED" &
@@ -1534,9 +1551,9 @@ else:
 when not declared(NGHTTP3_SETTINGS_V1):
   when 1 is static:
     const
-      NGHTTP3_SETTINGS_V1* = 1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1607:9
+      NGHTTP3_SETTINGS_V1* = 1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1607:9
   else:
-    let NGHTTP3_SETTINGS_V1* = 1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1607:9
+    let NGHTTP3_SETTINGS_V1* = 1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1607:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_SETTINGS_V1" &
@@ -1544,13 +1561,13 @@ else:
 when not declared(NGHTTP3_SETTINGS_VERSION):
   when NGHTTP3_SETTINGS_V1 is typedesc:
     type
-      NGHTTP3_SETTINGS_VERSION* = NGHTTP3_SETTINGS_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1608:9
+      NGHTTP3_SETTINGS_VERSION* = NGHTTP3_SETTINGS_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1608:9
   else:
     when NGHTTP3_SETTINGS_V1 is static:
       const
-        NGHTTP3_SETTINGS_VERSION* = NGHTTP3_SETTINGS_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1608:9
+        NGHTTP3_SETTINGS_VERSION* = NGHTTP3_SETTINGS_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1608:9
     else:
-      let NGHTTP3_SETTINGS_VERSION* = NGHTTP3_SETTINGS_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1608:9
+      let NGHTTP3_SETTINGS_VERSION* = NGHTTP3_SETTINGS_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1608:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_SETTINGS_VERSION" &
@@ -1558,9 +1575,9 @@ else:
 when not declared(NGHTTP3_CALLBACKS_V1):
   when 1 is static:
     const
-      NGHTTP3_CALLBACKS_V1* = 1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1894:9
+      NGHTTP3_CALLBACKS_V1* = 1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1894:9
   else:
-    let NGHTTP3_CALLBACKS_V1* = 1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1894:9
+    let NGHTTP3_CALLBACKS_V1* = 1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1894:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_CALLBACKS_V1" &
@@ -1568,13 +1585,13 @@ else:
 when not declared(NGHTTP3_CALLBACKS_VERSION):
   when NGHTTP3_CALLBACKS_V1 is typedesc:
     type
-      NGHTTP3_CALLBACKS_VERSION* = NGHTTP3_CALLBACKS_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1895:9
+      NGHTTP3_CALLBACKS_VERSION* = NGHTTP3_CALLBACKS_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1895:9
   else:
     when NGHTTP3_CALLBACKS_V1 is static:
       const
-        NGHTTP3_CALLBACKS_VERSION* = NGHTTP3_CALLBACKS_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1895:9
+        NGHTTP3_CALLBACKS_VERSION* = NGHTTP3_CALLBACKS_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1895:9
     else:
-      let NGHTTP3_CALLBACKS_VERSION* = NGHTTP3_CALLBACKS_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1895:9
+      let NGHTTP3_CALLBACKS_VERSION* = NGHTTP3_CALLBACKS_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:1895:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_CALLBACKS_VERSION" &
@@ -1582,9 +1599,9 @@ else:
 when not declared(NGHTTP3_DATA_FLAG_NONE):
   when cast[cuint](0'i64) is static:
     const
-      NGHTTP3_DATA_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2376:9
+      NGHTTP3_DATA_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2376:9
   else:
-    let NGHTTP3_DATA_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2376:9
+    let NGHTTP3_DATA_FLAG_NONE* = cast[cuint](0'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2376:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_DATA_FLAG_NONE" &
@@ -1592,9 +1609,9 @@ else:
 when not declared(NGHTTP3_DATA_FLAG_EOF):
   when cast[cuint](1'i64) is static:
     const
-      NGHTTP3_DATA_FLAG_EOF* = cast[cuint](1'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2386:9
+      NGHTTP3_DATA_FLAG_EOF* = cast[cuint](1'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2386:9
   else:
-    let NGHTTP3_DATA_FLAG_EOF* = cast[cuint](1'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2386:9
+    let NGHTTP3_DATA_FLAG_EOF* = cast[cuint](1'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2386:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_DATA_FLAG_EOF" &
@@ -1602,9 +1619,9 @@ else:
 when not declared(NGHTTP3_DATA_FLAG_NO_END_STREAM):
   when cast[cuint](2'i64) is static:
     const
-      NGHTTP3_DATA_FLAG_NO_END_STREAM* = cast[cuint](2'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2398:9
+      NGHTTP3_DATA_FLAG_NO_END_STREAM* = cast[cuint](2'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2398:9
   else:
-    let NGHTTP3_DATA_FLAG_NO_END_STREAM* = cast[cuint](2'i64) ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2398:9
+    let NGHTTP3_DATA_FLAG_NO_END_STREAM* = cast[cuint](2'i64) ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2398:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_DATA_FLAG_NO_END_STREAM" &
@@ -1612,9 +1629,9 @@ else:
 when not declared(NGHTTP3_DEFAULT_URGENCY):
   when 3 is static:
     const
-      NGHTTP3_DEFAULT_URGENCY* = 3 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2631:9
+      NGHTTP3_DEFAULT_URGENCY* = 3 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2631:9
   else:
-    let NGHTTP3_DEFAULT_URGENCY* = 3 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2631:9
+    let NGHTTP3_DEFAULT_URGENCY* = 3 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2631:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_DEFAULT_URGENCY" &
@@ -1622,9 +1639,9 @@ else:
 when not declared(NGHTTP3_URGENCY_HIGH):
   when 0 is static:
     const
-      NGHTTP3_URGENCY_HIGH* = 0 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2638:9
+      NGHTTP3_URGENCY_HIGH* = 0 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2638:9
   else:
-    let NGHTTP3_URGENCY_HIGH* = 0 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2638:9
+    let NGHTTP3_URGENCY_HIGH* = 0 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2638:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_URGENCY_HIGH" &
@@ -1632,9 +1649,9 @@ else:
 when not declared(NGHTTP3_URGENCY_LOW):
   when 7 is static:
     const
-      NGHTTP3_URGENCY_LOW* = 7 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2645:9
+      NGHTTP3_URGENCY_LOW* = 7 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2645:9
   else:
-    let NGHTTP3_URGENCY_LOW* = 7 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2645:9
+    let NGHTTP3_URGENCY_LOW* = 7 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2645:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_URGENCY_LOW" &
@@ -1642,9 +1659,9 @@ else:
 when not declared(NGHTTP3_PRI_V1):
   when 1 is static:
     const
-      NGHTTP3_PRI_V1* = 1    ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2654:9
+      NGHTTP3_PRI_V1* = 1    ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2654:9
   else:
-    let NGHTTP3_PRI_V1* = 1  ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2654:9
+    let NGHTTP3_PRI_V1* = 1  ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2654:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_PRI_V1" &
@@ -1652,13 +1669,13 @@ else:
 when not declared(NGHTTP3_PRI_VERSION):
   when NGHTTP3_PRI_V1 is typedesc:
     type
-      NGHTTP3_PRI_VERSION* = NGHTTP3_PRI_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2655:9
+      NGHTTP3_PRI_VERSION* = NGHTTP3_PRI_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2655:9
   else:
     when NGHTTP3_PRI_V1 is static:
       const
-        NGHTTP3_PRI_VERSION* = NGHTTP3_PRI_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2655:9
+        NGHTTP3_PRI_VERSION* = NGHTTP3_PRI_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2655:9
     else:
-      let NGHTTP3_PRI_VERSION* = NGHTTP3_PRI_V1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2655:9
+      let NGHTTP3_PRI_VERSION* = NGHTTP3_PRI_V1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2655:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_PRI_VERSION" &
@@ -1666,9 +1683,9 @@ else:
 when not declared(NGHTTP3_VERSION_AGE):
   when 1 is static:
     const
-      NGHTTP3_VERSION_AGE* = 1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2826:9
+      NGHTTP3_VERSION_AGE* = 1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2826:9
   else:
-    let NGHTTP3_VERSION_AGE* = 1 ## Generated based on /nim-http3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2826:9
+    let NGHTTP3_VERSION_AGE* = 1 ## Generated based on /nim-nghttp3/libs/nghttp3/lib/includes/nghttp3/nghttp3.h:2826:9
 else:
   static :
     hint("Declaration of " & "NGHTTP3_VERSION_AGE" &
