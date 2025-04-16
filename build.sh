@@ -13,6 +13,7 @@ cat "${root}/prelude.nim" >> nghttp3.nim
 for file in `ls "${sources}/nghttp3/lib"/*.c`; do
   echo "{.compile: \"$file\".}" >> nghttp3.nim
 done
+echo "{.compile: \"${sources}/nghttp3/lib/sfparse/sfparse.c\".}" >> nghttp3.nim
 
 # Step 4: generate nghttp3 source and append it to nghttp3.nim
 nimble install futhark@0.15.0 # futhark is required by generate nghttp3_source.nim

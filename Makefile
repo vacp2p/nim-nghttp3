@@ -5,4 +5,4 @@ build-source:
 .PHONY: build-source-and-test
 build-source-and-test:
 	./build.sh
-	nimble test --styleCheck:off --verbose --debug
+	nim c -d:debug --styleCheck:usages --styleCheck:error -r  tests/test_nghttp3.nim 
