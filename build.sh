@@ -7,7 +7,7 @@ rm -f nghttp3.nim
 touch nghttp3.nim
 
 # Step 2: add prelude
-cat "${root}/prelude.nim" >> nghttp3.nim
+cat "${root}/nghttp3_prelude.nim" >> nghttp3.nim
 
 # Step 3: add compile directive for all c files
 for file in `ls "${sources}/nghttp3/lib"/*.c`; do
