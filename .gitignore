@@ -1,0 +1,16 @@
+# Git submodules dir
+!libs/
+!libs/*
+
+# Ignore all test build files in tests folder (auto generated when running tests), 
+# by ignoring anything that does not have following file name scheme:
+# has extension or is Dockerfile...
+/tests/*
+!/tests/*.*
+
+# nim
+nimble.develop
+nimble.paths
+
+# Build binary
+generate_nghttp3
