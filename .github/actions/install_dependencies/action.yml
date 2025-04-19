@@ -9,7 +9,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Install autoconf and related tools
+    - name: Install dependencies (linux/macos)
       shell: bash
       run: |
         if [[ "${{ inputs.os }}" == linux* ]]; then
@@ -18,7 +18,12 @@ runs:
         elif [[ "${{ inputs.os }}" == macos* ]]; then
           brew update
           brew install autoconf automake libtool gcc
-        elif [[ "${{ inputs.os }}" == windows* ]]; then
-          pacman -Sy --noconfirm
-          pacman -S --noconfirm autoconf automake libtool make m4 pkg-config
         fi
+  
+    - name: Install dependencies (windows)
+      if: ${{ inputs.os == 'windows' }}
+      shell: msys2 {0}
+      run: |
+        pacman -Sy --noconfirm
+        pacman -S  --noconfirm autoconf automake libtool make pkg-config
+        export ACLOCAL_PATH=/usr/share/aclocal
