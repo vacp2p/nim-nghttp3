@@ -95,7 +95,7 @@ jobs:
           sudo update-alternatives --set gcc /usr/bin/gcc-14
 
       # needed for nimble install
-      - name: Install autoreconf
+      - name: Install autoconf
         run: |
           if [[ "${{ matrix.platform.os }}" == linux* ]]; then
             sudo apt install autoconf automake libtool libc6-dev
