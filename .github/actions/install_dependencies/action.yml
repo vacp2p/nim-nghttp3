@@ -1,0 +1,24 @@
+name: Install nim-nghttp3 dependencies
+description: Cross-platform install of nim-nghttp3 dependencies (tooling)
+author: Status Research & Development GmbH
+inputs:
+  os:
+    description: The target operating system
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install autoconf and related tools
+      shell: bash
+      run: |
+        if [[ "${{ inputs.os }}" == linux* ]]; then
+          sudo apt update
+          sudo apt install -y autoconf automake libtool libc6-dev
+        elif [[ "${{ inputs.os }}" == macos* ]]; then
+          brew update
+          brew install autoconf automake libtool gcc
+        elif [[ "${{ inputs.os }}" == windows* ]]; then
+          pacman -Sy --noconfirm
+          pacman -S --noconfirm autoconf automake libtool make m4 pkg-config
+        fi
