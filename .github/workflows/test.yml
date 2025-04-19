@@ -76,15 +76,6 @@ jobs:
           shell: ${{ matrix.shell }}
           nim_ref: ${{ matrix.nim.ref }}
 
-      - name: Restore deps from cache
-        id: deps-cache
-        uses: actions/cache@v3
-        with:
-          path: nimbledeps
-          # Using nim.ref as a simple way to differentiate between nimble using the "pkgs" or "pkgs2" directories.
-          # The change happened on Nimble v0.14.0. Also forcing the deps to be reinstalled on each os and cpu.
-          key: nimbledeps-${{ matrix.nim.ref }}-${{ matrix.builder }}-${{ matrix.platform.cpu }}-${{ hashFiles('.pinned') }} # hashFiles returns a different value on windows
-
       - name: Use gcc 14
         if : ${{ matrix.platform.os == 'linux-gcc-14'}}
         run: |
@@ -94,13 +85,12 @@ jobs:
           # Set GCC-14 as the default
           sudo update-alternatives --set gcc /usr/bin/gcc-14
 
-      - name: Install nim-nghttp3 dependencies
+      - name: Install nim-nghttp3 dependencies (tooling)
         uses: ./.github/actions/install_dependencies
         with:
           os: ${{ matrix.platform.os }}
 
-      - name: Install deps
-        if: ${{ steps.deps-cache.outputs.cache-hit != 'true' }}
+      - name: Install repository deps (nimble install)
         run: |
           nimble install
 

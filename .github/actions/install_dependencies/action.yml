@@ -1,5 +1,5 @@
 name: Install nim-nghttp3 dependencies
-description: Cross-platform install of nim-nghttp3 dependencies
+description: Cross-platform install of nim-nghttp3 dependencies (tooling)
 author: Status Research & Development GmbH
 inputs:
   os:
