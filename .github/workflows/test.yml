@@ -94,17 +94,10 @@ jobs:
           # Set GCC-14 as the default
           sudo update-alternatives --set gcc /usr/bin/gcc-14
 
-      # needed for nimble install
-      - name: Install autoconf
-        run: |
-          if [[ "${{ matrix.platform.os }}" == linux* ]]; then
-            sudo apt install autoconf automake libtool libc6-dev
-          elif [[ "${{ matrix.platform.os }}" == macos* ]]; then
-            brew install autoconf automake libtool gcc
-          elif [[ "${{ matrix.platform.os }}" == windows* ]]; then
-            pacman -Sy
-            pacman -S --noconfirm autoconf automake libtool make m4 pkg-config
-          fi
+      - name: Install nim-nghttp3 dependencies
+        uses: ./.github/actions/install_dependencies
+        with:
+          os: ${{ matrix.platform.os }}
 
       - name: Install deps
         if: ${{ steps.deps-cache.outputs.cache-hit != 'true' }}
