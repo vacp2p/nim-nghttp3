@@ -27,8 +27,6 @@ jobs:
             cpu: amd64
           - os: macos-14
             cpu: arm64
-          - os: windows
-            cpu: amd64
         nim:
           - ref: version-1-6
             memory_management: refc
@@ -51,10 +49,6 @@ jobs:
               os: macos-14
             builder: macos-14
             shell: bash
-          - platform:
-              os: windows
-            builder: windows-2022
-            shell: msys2 {0}
 
     defaults:
       run:
