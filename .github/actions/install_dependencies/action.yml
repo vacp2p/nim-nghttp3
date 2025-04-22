@@ -26,4 +26,3 @@ runs:
       run: |
         pacman -Sy --noconfirm
         pacman -S  --noconfirm autoconf automake libtool make pkg-config
-        export ACLOCAL_PATH=/usr/share/aclocal
