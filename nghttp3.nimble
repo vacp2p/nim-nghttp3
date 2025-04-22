@@ -1,5 +1,5 @@
 packageName = "nghttp3"
-version = "0.0.1"
+version = "0.0.2"
 author = "Status Research & Development GmbH"
 description = "Nim wrapper around the nghttp3 library"
 license = "MIT"
